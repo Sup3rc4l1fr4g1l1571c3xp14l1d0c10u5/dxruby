@@ -18,6 +18,7 @@
 #ifdef DXRUBY15
 #include "font.h"
 #endif
+#include "messagethread.h"
 
 #ifdef DXRUBY15
 #ifdef DXRUBY_USE_TYPEDDATA

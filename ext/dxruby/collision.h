@@ -24,7 +24,7 @@ int make_volume( VALUE vsprite, struct DXRubyCollisionGroup *collision );
 void make_volume_sub( VALUE vsprite, VALUE vcol, struct DXRubyCollision *collision );
 void collision_init(void);
 int get_volume_count( VALUE vary );
-
+void collision_clear(void);
 
 #define check_box_box(b1, b2) ( (b1)->x1 < (b2)->x2 && \
                                 (b1)->y1 < (b2)->y2 && \
