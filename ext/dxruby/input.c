@@ -1,6 +1,8 @@
 /* アナログパッド入力のコードは @iMAKOPiさんより頂きました。2012/07/06 */
 #define WINVER 0x0500                                  /* バージョン定義 Windows2000以上 */
+#ifndef _WIN32_WINNT
 #define _WIN32_WINNT WINVER
+#endif
 #undef DIRECTINPUT_VERSION
 #define DIRECTINPUT_VERSION        (0x0800)            /* DirectInputバージョン定義 */
 

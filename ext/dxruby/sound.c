@@ -1,6 +1,8 @@
 #define WINVER 0x0500                                  /* バージョン定義 Windows2000以上 */
 #define DIRECTSOUND_VERSION 0x0900
+#ifndef _WIN32_WINNT
 #define _WIN32_WINNT WINVER
+#endif
 
 #include "ruby.h"
 #ifndef RUBY_ST_H
