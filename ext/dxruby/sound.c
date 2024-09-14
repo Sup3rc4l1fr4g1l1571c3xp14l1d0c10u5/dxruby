@@ -1105,7 +1105,7 @@ static VALUE SoundEffect_initialize( int argc, VALUE *argv, VALUE obj )
     }
 
     /* ロック */
-    hr = soundeffect->pDSBuffer->lpVtbl->Lock( soundeffect->pDSBuffer, 0, 0, &pointer, &size, &pointer2, &size2, DSBLOCK_ENTIREBUFFER );
+    hr = soundeffect->pDSBuffer->lpVtbl->Lock( soundeffect->pDSBuffer, 0, 0, (void**)&pointer, &size, (void**)&pointer2, &size2, DSBLOCK_ENTIREBUFFER );
     if( FAILED( hr ) || size2 != 0 )
     {
         rb_raise( eDXRubyError, "Failure to lock the SoundBuffer - Lock" );
@@ -1214,7 +1214,7 @@ static VALUE SoundEffect_add( int argc, VALUE *argv, VALUE obj )
     DXRUBY_CHECK_DISPOSE( soundeffect, pDSBuffer );
 
 	/* ロック */
-	hr = soundeffect->pDSBuffer->lpVtbl->Lock( soundeffect->pDSBuffer, 0, 0, &pointer, &size, &pointer2, &size2, DSBLOCK_ENTIREBUFFER );
+	hr = soundeffect->pDSBuffer->lpVtbl->Lock( soundeffect->pDSBuffer, 0, 0, (void**)&pointer, &size, (void**)&pointer2, &size2, DSBLOCK_ENTIREBUFFER );
     if( FAILED( hr ) || size2 != 0 )
     {
         rb_raise( eDXRubyError, "Failure to lock the SoundBuffer - Lock" );
@@ -1362,7 +1362,7 @@ static VALUE SoundEffect_save( VALUE self, VALUE vfilename )
     DXRUBY_CHECK_DISPOSE( se, pDSBuffer );
 
     /* ロック */
-    hr = se->pDSBuffer->lpVtbl->Lock( se->pDSBuffer, 0, 0, &pointer, &size, &pointer2, &size2, DSBLOCK_ENTIREBUFFER );
+    hr = se->pDSBuffer->lpVtbl->Lock( se->pDSBuffer, 0, 0, (void**)&pointer, &size, (void**)&pointer2, &size2, DSBLOCK_ENTIREBUFFER );
     if( FAILED( hr ) || size2 != 0 )
     {
         rb_raise( eDXRubyError, "Failure to lock the SoundBuffer - Lock" );
@@ -1427,7 +1427,7 @@ static VALUE SoundEffect_to_a( VALUE self )
     DXRUBY_CHECK_DISPOSE( se, pDSBuffer );
 
     /* ロック */
-    hr = se->pDSBuffer->lpVtbl->Lock( se->pDSBuffer, 0, 0, &pointer, &size, &pointer2, &size2, DSBLOCK_ENTIREBUFFER );
+    hr = se->pDSBuffer->lpVtbl->Lock( se->pDSBuffer, 0, 0, (void**)&pointer, &size, (void**)&pointer2, &size2, DSBLOCK_ENTIREBUFFER );
     if( FAILED( hr ) || size2 != 0 )
     {
         rb_raise( eDXRubyError, "Failure to lock the SoundBuffer - Lock" );
