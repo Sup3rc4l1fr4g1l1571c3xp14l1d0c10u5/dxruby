@@ -736,7 +736,7 @@ static __int64 GetSystemCounter( void )
 /*--------------------------------------------------------------------
    I—¹‚ÉÀs‚·‚é
  ---------------------------------------------------------------------*/
-static VALUE Window_shutdown( VALUE obj )
+static void Window_shutdown( VALUE obj )
 {
     struct DXRubyRenderTarget *rt = DXRUBY_GET_STRUCT( RenderTarget, g_WindowInfo.render_target );
 
@@ -770,7 +770,6 @@ static VALUE Window_shutdown( VALUE obj )
     /* Image‚ÌI—¹ˆ— */
     finalize_dxruby_Image();
 
-    return obj;
 }
 
 
