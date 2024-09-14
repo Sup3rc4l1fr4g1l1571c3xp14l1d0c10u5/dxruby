@@ -122,7 +122,7 @@ struct DXRubyWindowInfo {
 };
 
 /* ピクチャ配列 */
-static struct DXRubyPictureList {
+struct DXRubyPictureList {
     float z;                        /* ピクチャのZ座標 */
     struct DXRubyPicture *picture;    /* ピクチャ構造体へのポインタ */
 };
